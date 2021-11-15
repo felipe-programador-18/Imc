@@ -1,0 +1,42 @@
+<%- include('header') %>
+
+<button class="homem">Homem</button>
+<button class="mulher">Mulher</button>
+<form method="get" action="gordura">
+     
+    <input name="idade" type="number" placeholder="Idade">
+    <input name="altura" type="text" placeholder="altura ex: 1.70">
+    <input name="peso" type="number" placeholder="Peso">
+ 
+     
+    <button class="botaofinal">clique aqui</button>
+   </form>
+   
+  <div class="resultado"> 
+    <% if(error){ %>
+      <%= error %>
+      <% }else{ %> 
+    Altura de: <%= altura %> e Massa de: <%= peso %>
+     É igual a: <%= calculo %> 
+    
+   <% if(calculo< 18.5){ %>
+      Vc está abaixo do peso, está magro demais!
+   <% } else if(calculo < 24.5){ %>
+     Parabéns vc está com indice normal
+   <% } else if(calculo < 30.5) { %>
+     Cuide de sua saúde, vc está acima do peso!!
+   <% } else if(calculo > 30.5) {  %>
+     Alerta você está com obesidade, cuide da saúde urgente!
+    <% }%>
+    
+    
+    
+    <% } %> 
+      
+      
+                                                   
+  </div>
+
+ 
+
+<%- include('footer') %>
